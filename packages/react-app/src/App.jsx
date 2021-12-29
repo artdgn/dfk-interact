@@ -192,8 +192,11 @@ function App(props) {
           <div style={{ margin: "auto", width: "70vw" }}>
             <Card title="Resources for info">
               <h3>Latest listings: discord "BOTS / <b>#tavern-listings"</b></h3>
-              <h3>Info / analytics resources: <a href="http://dfktavern.com/">dfktavern</a></h3>
-              <h3>Hero details: Barkeep hero viewer or <a href="https://kingdom.watch/hero">kingdom.watch/hero</a></h3>
+              <h3>Useful community resources
+                : <a href="http://dfktavern.com/">dfktavern</a>
+                , <a href="https://dfking.co/">https://dfking.co/</a>
+                , <a href="https://kingdom.watch">kingdom.watch</a>
+              </h3>
             </Card>
           </div>
           <Contract
