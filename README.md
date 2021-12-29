@@ -1,7 +1,7 @@
 # Defikingdoms contract interaction helper
 
-## Why: allow making transaction using non DFK UI
-DFK's contract's aren't verified, so interacting directly on blockexplorer is not available.
+## Why? To allow making transaction using non DFK UI
+DFK's contract's aren't verified, so interacting directly on the block explorer is not available.
 
 If DFK's UI (e.g. tavern) isn't working correctly, other community resources can be used for information, and this can be used for transacting (e.g. bidding).
 

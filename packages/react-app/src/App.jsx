@@ -166,6 +166,12 @@ function App(props) {
         <Menu.Item key="/gardens">
           <Link to="/gardens">Gardens</Link>
         </Menu.Item>
+        <Menu.Item key="/jewel">
+          <Link to="/jewel">Jewel Token</Link>
+        </Menu.Item>
+        {/* <Menu.Item key="/hero">
+          <Link to="/hero">Hero NFT</Link>
+        </Menu.Item> */}
       </Menu>
 
       <Switch>
@@ -176,7 +182,7 @@ function App(props) {
             <h3></h3>
             <h3><b>Why? To allow making transaction using non DFK UI</b></h3>
             If DFK's UI (e.g. tavern) isn't working correctly, this tool can be used for transacting 
-            (becuase DFK's contracts aren't verified interacting on blockexplorer isn't possible)
+            (as DFK's contracts aren't verified interacting on the block explorer isn't possible)
             <h3></h3>
             <h3><b>Gotchas & Tips</b></h3>
             1. Don't forget to make the numbers into 18 decimals format by pressing the 💥 button
@@ -225,6 +231,30 @@ function App(props) {
             chainId={initialNetwork.chainId}
           />
         </Route>
+        <Route path="/jewel">
+          <Contract
+            name="Jewel Token Contract (ERC20)"
+            customContract={mainnetContracts?.JEWEL}
+            signer={userSigner}
+            provider={mainnetProvider}
+            address={address}
+            blockExplorer={blockExplorer}
+            contractConfig={contractConfig}
+            chainId={initialNetwork.chainId}
+          />
+        </Route>
+        {/* <Route path="/hero">
+          <Contract
+            name="Hero NFT Contract (ERC721)"
+            customContract={mainnetContracts?.HERO}
+            signer={userSigner}
+            provider={mainnetProvider}
+            address={address}
+            blockExplorer={blockExplorer}
+            contractConfig={contractConfig}
+            chainId={initialNetwork.chainId}
+          />
+        </Route> */}
       </Switch>
 
       <ThemeSwitch />

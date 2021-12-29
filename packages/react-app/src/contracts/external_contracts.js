@@ -14,6 +14,14 @@ module.exports = {
         address: "0xDB30643c71aC9e2122cA0341ED77d09D5f99F924",
         abi: require("./abis/MasterGardener.json"),
       },
+      JEWEL: {
+        address: "0x72Cb10C6bfA5624dD07Ef608027E366bd690048F",
+        abi: require("./abis/ERC20.json"),
+      },
+      HERO: {
+        address: "0x5F753dcDf9b1AD9AabC1346614D1f4746fd6Ce5C",
+        abi: require("./abis/ERC721.json"),
+      },
     },
   },
 };
