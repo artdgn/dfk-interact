@@ -70,11 +70,6 @@ function App(props) {
   ]);
   const mainnetProvider = useStaticJsonRPC(providers);
 
-  if (DEBUG) console.log(`Using ${selectedNetwork} network`);
-
-  // 🛰 providers
-  if (DEBUG) console.log("📡 Connecting to Mainnet Ethereum");
-
   const logoutOfWeb3Modal = async () => {
     await web3Modal.clearCachedProvider();
     if (injectedProvider && injectedProvider.provider && typeof injectedProvider.provider.disconnect == "function") {
