@@ -15,7 +15,7 @@ import {
   ThemeSwitch,
   NetworkDisplay,
 } from "./components";
-import { NETWORKS, ALCHEMY_KEY } from "./constants";
+import { NETWORKS } from "./constants";
 import externalContracts from "./contracts/external_contracts";
 // contracts
 import deployedContracts from "./contracts/hardhat_contracts.json";
@@ -32,10 +32,6 @@ const { ethers } = require("ethers");
     Support:
     https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA
     or DM @austingriffith on twitter or telegram
-
-    You should get your own Alchemy.com & Infura.io ID and put it in `constants.js`
-    (this is your connection to the main Ethereum network for ENS etc.)
-
 
     🌏 EXTERNAL CONTRACTS:
     You can also bring in contract artifacts in `constants.js`
@@ -93,8 +89,6 @@ function App(props) {
   // /* 💵 This hook will get the price of ETH from 🦄 Uniswap: */
   // const price = useExchangeEthPrice(targetNetwork, mainnetProvider);
 
-  /* 🔥 This hook will get the price of Gas from ⛽️ EtherGasStation */
-  const gasPrice = useGasPrice(targetNetwork, "fast");
   // Use your injected provider from 🦊 Metamask or if you don't have it then instantly generate a 🔥 burner wallet.
   const userProviderAndSigner = useUserProviderAndSigner(injectedProvider, localProvider, USE_BURNER_WALLET);
   const userSigner = userProviderAndSigner.signer;

@@ -1,6 +1,6 @@
 import { notification } from "antd";
 import Notify from "bnc-notify";
-import { BLOCKNATIVE_DAPPID } from "../constants";
+import { BLOCKNATIVE_DAPPID, NETWORKS } from "../constants";
 
 const { ethers } = require("ethers");
 
@@ -55,6 +55,8 @@ export default function Transactor(providerOrSigner, gasPrice, etherscan) {
       let etherscanTxUrl = "https://" + etherscanNetwork + "etherscan.io/tx/";
       if (network.chainId === 100) {
         etherscanTxUrl = "https://blockscout.com/poa/xdai/tx/";
+      } else if (network.chainId === NETWORKS.mainnetHarmony.chainId) {
+        etherscanTxUrl = NETWORKS.mainnetHarmony.blockExplorer;
       }
 
       try {
