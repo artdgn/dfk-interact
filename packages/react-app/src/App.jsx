@@ -1,4 +1,4 @@
-import { Menu } from "antd";
+import { Card, Menu } from "antd";
 import "antd/dist/antd.css";
 import {
   useContractLoader,
@@ -170,12 +170,28 @@ function App(props) {
 
       <Switch>
         <Route exact path="/">
-          <h1></h1>
-          <h1>Pick a DFK contract to interact with from the options above.</h1>
+          <div style={{ textAlign: "left", marginLeft: "30px" }}>
+            <h1></h1>
+            <h2>👆 Pick a DFK contract to interact with from the options above 👆</h2>
+            <h3></h3>
+            <h3><b>Why? To allow making transaction using non DFK UI</b></h3>
+            If DFK's UI (e.g. tavern) isn't working correctly, this tool can be used for transacting 
+            (becuase DFK's contracts aren't verified interacting on blockexplorer isn't possible)
+            <h3></h3>
+            <h3><b>Gotchas & Tips</b></h3>
+            1. Don't forget to make the numbers into 18 decimals format by pressing the 💥 button
+          </div>
         </Route>
         <Route path="/auctions">
+          <div style={{ margin: "auto", width: "70vw" }}>
+            <Card title="Resources for info">
+              <h3>Latest listings: discord "BOTS / <b>#tavern-listings"</b></h3>
+              <h3>Info / analytics resources: <a href="http://dfktavern.com/">dfktavern</a></h3>
+              <h3>Hero details: Barkeep hero viewer or <a href="https://kingdom.watch/hero">kingdom.watch/hero</a></h3>
+            </Card>
+          </div>
           <Contract
-            name="Tavern Auctions"
+            name="Tavern Auctions Contract"
             customContract={mainnetContracts?.AUCTIONS}
             signer={userSigner}
             provider={mainnetProvider}
@@ -187,7 +203,7 @@ function App(props) {
         </Route>
         <Route path="/bank">
           <Contract
-            name="Bank"
+            name="Bank Contract"
             customContract={mainnetContracts?.BANK}
             signer={userSigner}
             provider={mainnetProvider}
@@ -199,7 +215,7 @@ function App(props) {
         </Route>
         <Route path="/gardens">
           <Contract
-            name="Gardens"
+            name="Gardens Contract"
             customContract={mainnetContracts?.GARDENS}
             signer={userSigner}
             provider={mainnetProvider}
