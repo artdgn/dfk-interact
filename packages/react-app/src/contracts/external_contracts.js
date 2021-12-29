@@ -1,3 +1,5 @@
+const AUCTIONS = require("./abis/SaleAuction.json");
+
 const ERC20ABI = [
   {
     constant: true,
@@ -795,6 +797,14 @@ module.exports = {
       UNI: {
         address: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
         abi: ERC20ABI,
+      }
+    },
+  },
+  1666600000: {
+    contracts: {
+      AUCTIONS: {
+        address: "0x13a65B9F8039E2c032Bc022171Dc05B30c3f2892",
+        abi: AUCTIONS,
       },
     },
   },
