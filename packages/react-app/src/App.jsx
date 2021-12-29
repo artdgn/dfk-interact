@@ -2,7 +2,6 @@ import { Menu } from "antd";
 import "antd/dist/antd.css";
 import {
   useContractLoader,
-  useGasPrice,
   useUserProviderAndSigner,
 } from "eth-hooks";
 import React, { useCallback, useEffect, useState } from "react";
@@ -19,7 +18,7 @@ import { NETWORKS } from "./constants";
 import externalContracts from "./contracts/external_contracts";
 // contracts
 import deployedContracts from "./contracts/hardhat_contracts.json";
-import { Transactor, Web3ModalSetup } from "./helpers";
+import { Web3ModalSetup } from "./helpers";
 import { useStaticJsonRPC } from "./hooks";
 
 const { ethers } = require("ethers");
@@ -164,18 +163,49 @@ function App(props) {
           <Link to="/">Start</Link>
         </Menu.Item>
         <Menu.Item key="/auctions">
-          <Link to="/auctions">Auctions</Link>
+          <Link to="/auctions">Tavern</Link>
+        </Menu.Item>
+        <Menu.Item key="/bank">
+          <Link to="/bank">Bank</Link>
+        </Menu.Item>
+        <Menu.Item key="/gardens">
+          <Link to="/gardens">Gardens</Link>
         </Menu.Item>
       </Menu>
 
       <Switch>
         <Route exact path="/">
-          <h3>Pick a DFK contract to interact with.</h3>
+          <h1></h1>
+          <h1>Pick a DFK contract to interact with from the options above.</h1>
         </Route>
         <Route path="/auctions">
           <Contract
             name="Tavern Auctions"
             customContract={mainnetContracts?.AUCTIONS}
+            signer={userSigner}
+            provider={mainnetProvider}
+            address={address}
+            blockExplorer={blockExplorer}
+            contractConfig={contractConfig}
+            chainId={initialNetwork.chainId}
+          />
+        </Route>
+        <Route path="/bank">
+          <Contract
+            name="Bank"
+            customContract={mainnetContracts?.BANK}
+            signer={userSigner}
+            provider={mainnetProvider}
+            address={address}
+            blockExplorer={blockExplorer}
+            contractConfig={contractConfig}
+            chainId={initialNetwork.chainId}
+          />
+        </Route>
+        <Route path="/gardens">
+          <Contract
+            name="Gardens"
+            customContract={mainnetContracts?.GARDENS}
             signer={userSigner}
             provider={mainnetProvider}
             address={address}
