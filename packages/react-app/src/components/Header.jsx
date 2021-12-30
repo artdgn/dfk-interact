@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <a href="https://github.com/artdgn/dfk-contracts" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/artdgn/dfk-interact" target="_blank" rel="noopener noreferrer">
       <PageHeader
         title="DFK contract interactions"
         style={{ cursor: "pointer" }}
