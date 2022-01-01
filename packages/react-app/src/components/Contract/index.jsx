@@ -45,6 +45,7 @@ const isQueryable = fn => (fn.stateMutability === "view" || fn.stateMutability =
 
 export default function Contract({
   customContract,
+  showFirst,
   account,
   gasPrice,
   signer,
@@ -68,9 +69,12 @@ export default function Contract({
   const contractIsDeployed = useContractExistsAtAddress(provider, address);
 
   const displayedContractFunctions = useMemo(() => {
+    showFirst = showFirst ? showFirst.reverse() : [];
     const results = contract
       ? Object.entries(contract.interface.functions).filter(
           fn => fn[1]["type"] === "function" && !(show && show.indexOf(fn[1]["name"]) < 0),
+        ).sort(
+          (fn_a, fn_b) => (showFirst.indexOf(fn_b[1]["name"]) - showFirst.indexOf(fn_a[1]["name"]))
         )
       : [];
     return results;

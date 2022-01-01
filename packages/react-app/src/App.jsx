@@ -206,6 +206,7 @@ function App(props) {
           <Contract
             name="Tavern Auctions Contract"
             customContract={mainnetContracts?.AUCTIONS}
+            showFirst={["getCurrentPrice", "bid"]}
             signer={userSigner}
             provider={mainnetProvider}
             address={address}
@@ -218,6 +219,7 @@ function App(props) {
           <Contract
             name="Bank Contract"
             customContract={mainnetContracts?.BANK}
+            showFirst={["balanceOf", "enter", "leave"]}
             signer={userSigner}
             provider={mainnetProvider}
             address={address}
@@ -230,6 +232,7 @@ function App(props) {
           <Contract
             name="Gardens Contract"
             customContract={mainnetContracts?.GARDENS}
+            showFirst={["claimReward", "claimRewards"]}
             signer={userSigner}
             provider={mainnetProvider}
             address={address}
@@ -242,6 +245,7 @@ function App(props) {
           <Contract
             name="Jewel Token Contract (ERC20)"
             customContract={mainnetContracts?.JEWEL}
+            showFirst={["balanceOf", "claimRewards"]}
             signer={userSigner}
             provider={mainnetProvider}
             address={address}
