@@ -1,4 +1,4 @@
-import { Button, Col, Divider, Input, Row, Tooltip } from "antd";
+import { Button, Col, Divider, Input, Row, Tooltip, notification } from "antd";
 import React, { useState } from "react";
 import Blockies from "react-blockies";
 import { Transactor } from "../../helpers";
@@ -165,8 +165,10 @@ export default function FunctionForm({ contractFunction, functionInfo, provider,
     }
   };
 
+  const isView = (functionInfo.stateMutability === "view" || functionInfo.stateMutability === "pure");
+  
   const buttonIcon =
-    functionInfo.type === "call" ? (
+    isView ? (
       <Button style={{ marginLeft: -32 }}>Read📡</Button>
     ) : (
       <Button style={{ marginLeft: -32 }}>Send💸</Button>
@@ -200,13 +202,18 @@ export default function FunctionForm({ contractFunction, functionInfo, provider,
               });
 
               let result;
-              if (functionInfo.stateMutability === "view" || functionInfo.stateMutability === "pure") {
+              if (isView) {
                 try {
                   const returned = await contractFunction(...args);
                   handleForm(returned);
                   result = tryToDisplayAsText(returned);
                 } catch (err) {
                   console.error(err);
+                  notification.error({
+                    message: "Call error",
+                    description: err?.data?.message || err?.message,
+                    placement: "bottomRight",
+                  });
                 }
               } else {
                 const overrides = {};

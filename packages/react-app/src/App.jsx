@@ -190,13 +190,17 @@ function App(props) {
         </Route>
         <Route path="/auctions">
           <div style={{ margin: "auto", width: "70vw" }}>
-            <Card title="Resources for info">
-              <h3>Latest listings: discord "BOTS / <b>#tavern-listings"</b></h3>
+            <Card title="Resources for info" size="small">              
               <h3>Useful community resources
                 : <a href="http://dfktavern.com/">dfktavern</a>
                 , <a href="https://dfking.co/">https://dfking.co/</a>
                 , <a href="https://kingdom.watch">kingdom.watch</a>
               </h3>
+            </Card>
+            <Card title="Tips" size="small">
+              <p>Search latest listings in discord @ "BOTS > <b>#tavern-listings"</b> (<i>e.g. "in:#tavern-listings mining"</i>) then:</p>
+              <p>1. Check current price using <b>"getCurrentPrice"</b> if it fails - it's not listed</p>
+              <p>2. For <b>"bid"</b> make the <i>_bidAmount</i> into 18 decimals format by pressing the 💥 button</p>
             </Card>
           </div>
           <Contract
