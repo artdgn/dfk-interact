@@ -176,7 +176,7 @@ function App(props) {
 
       <Switch>
         <Route exact path="/">
-          <div style={{ textAlign: "left", marginLeft: "30px" }}>
+          <Card title="Tips" size="large">
             <h1></h1>
             <h2>👆 Pick a DFK contract to interact with from the options above 👆</h2>
             <h3></h3>
@@ -186,20 +186,30 @@ function App(props) {
             <h3></h3>
             <h3><b>Gotchas & Tips</b></h3>
             1. Don't forget to make the numbers into 18 decimals format by pressing the 💥 button
-          </div>
+            <h3></h3>
+            <h3><b>Security</b></h3>
+            <p>1. To verify you're interacting with correct contracts check discord "#serendale-contracts"</p>
+            <p>2. The contracts ABIs were published by DFK at: <a href="https://github.com/DefiKingdoms/contracts/tree/main/abi" target="_blank">github.com/DefiKingdoms/contracts</a></p>
+          </Card>
         </Route>
         <Route path="/auctions">
           <div style={{ margin: "auto", width: "70vw" }}>
-            <Card title="Resources for info" size="small">              
-              <h3>Useful community resources
-                : <a href="http://dfktavern.com/">dfktavern</a>
-                , <a href="https://dfking.co/">https://dfking.co/</a>
-                , <a href="https://kingdom.watch">kingdom.watch</a>
+            <Card title="Resources" size="small">              
+              <h3>General community resources
+                : <a href="http://dfktavern.com/" target="_blank">dfktavern</a>
+                , <a href="https://dfking.co/" target="_blank">dfking.co</a>
+                , <a href="https://kingdom.watch" target="_blank">kingdom.watch</a>
+                , <a href="https://dfktracker.app/" target="_blank">dfktracker</a>
+              </h3>
+              <h3>Real-time listings monitors:
+                : <a href="http://dfktavern.com/saleAuction-alert" target="_blank">dfktavern-sales</a>
+                , <a href="https://dfking.co/sales" target="_blank">dfking-sales</a>
+                , discord "#tavern-listings"
               </h3>
             </Card>
             <Card title="Tips" size="small">
-              <p>Search latest listings in discord @ "BOTS > <b>#tavern-listings"</b> (<i>e.g. "in:#tavern-listings mining"</i>) then:</p>
-              <p>1. Check current price using <b>"getCurrentPrice"</b> if it fails - it's not listed</p>
+              <p>Find recent listing via above resources and then:</p>
+              <p>1. Check current price using <b>"getCurrentPrice"</b> if it fails - it's no longer listed</p>
               <p>2. For <b>"bid"</b> make the <i>_bidAmount</i> into 18 decimals format by pressing the 💥 button</p>
             </Card>
           </div>
