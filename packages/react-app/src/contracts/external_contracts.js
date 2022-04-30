@@ -20,7 +20,7 @@ module.exports = {
       },
       HERO: {
         address: "0x5F753dcDf9b1AD9AabC1346614D1f4746fd6Ce5C",
-        abi: require("./abis/ERC721.json"),
+        abi: require("./abis/hero.json"),
       },
     },
   },

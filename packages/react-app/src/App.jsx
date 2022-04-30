@@ -169,9 +169,9 @@ function App(props) {
         <Menu.Item key="/jewel">
           <Link to="/jewel">Jewel Token</Link>
         </Menu.Item>
-        {/* <Menu.Item key="/hero">
+        <Menu.Item key="/hero">
           <Link to="/hero">Hero NFT</Link>
-        </Menu.Item> */}
+        </Menu.Item>
       </Menu>
 
       <Switch>
@@ -264,10 +264,11 @@ function App(props) {
             chainId={initialNetwork.chainId}
           />
         </Route>
-        {/* <Route path="/hero">
+        <Route path="/hero">
           <Contract
             name="Hero NFT Contract (ERC721)"
             customContract={mainnetContracts?.HERO}
+            showFirst={["balanceOf", "getHero", "ownerOf", "transferFrom"]}
             signer={userSigner}
             provider={mainnetProvider}
             address={address}
@@ -275,7 +276,7 @@ function App(props) {
             contractConfig={contractConfig}
             chainId={initialNetwork.chainId}
           />
-        </Route> */}
+        </Route>
       </Switch>
 
       <ThemeSwitch />
